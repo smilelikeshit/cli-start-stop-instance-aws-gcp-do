@@ -1,15 +1,22 @@
 
-###
+### 
+this is for example and try to build CLI using golang. 
+you can combine with crontab for schedule start stop instance 
 
-## GCP ##
+## GCP credentials ##
+- make sure service accout to client instance only 
+```bash
 imam@imam-mv:~$ export GOOGLE_APPLICATION_CREDENTIALS=
+```
 
-
-## AWS ##
+## AWS credentials ##
+- make sure iam to allow read only 
+```bash
 imam@imam-mv:~$ aws configure
-
+```
 
 ## Digitalocean ##
+Soon
 
 
 
@@ -21,3 +28,5 @@ imam@imam-mv:~$ ./ectl gcp instance --action=start --region=sgp i-xxx i-xxx
 imam@imam-mv:~$ ./ectl digitalocean instance --action=
 
 ```
+
+
