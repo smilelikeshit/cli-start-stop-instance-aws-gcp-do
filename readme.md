@@ -13,6 +13,10 @@ imam@imam-mv:~$ export GOOGLE_APPLICATION_CREDENTIALS=
 - make sure iam to allow read only 
 ```bash
 imam@imam-mv:~$ aws configure
+AWS Access Key ID [****************XXXX]: 
+AWS Secret Access Key [****************XXXX]: 
+Default region name [ap-southeast-1]: 
+Default output format [None]:
 ```
 
 ## Digitalocean ##
