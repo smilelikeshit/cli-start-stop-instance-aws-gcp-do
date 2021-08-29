@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 
 	google "golang.org/x/oauth2/google"
 )
@@ -19,7 +20,7 @@ type Gcs struct {
 
 func NewGCS(ctx context.Context) *Gcs {
 
-	data, err := ioutil.ReadFile("<PLEASE PUT PATH YOUR JSON FILE HERE")
+	data, err := ioutil.ReadFile(os.Getenv("GOOGLE_APPLICATION_CREDENTIALS"))
 	if err != nil {
 		log.Fatal(err)
 	}
