@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"learn1/services/cloudaws"
 	"log"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -31,7 +32,7 @@ var instanceAWSCmd = &cobra.Command{
 			InstanceId: args,
 		}
 
-		if action == "start" || action == "START" {
+		if strings.ToLower(action) == "start" {
 
 			err := s.Start(false)
 			if err != nil {
@@ -39,7 +40,7 @@ var instanceAWSCmd = &cobra.Command{
 			}
 			s.Start(true)
 
-		} else if action == "stop" || action == "STOP" {
+		} else if strings.ToLower(action) == "stop" {
 
 			err := s.Stop(false)
 			if err != nil {
