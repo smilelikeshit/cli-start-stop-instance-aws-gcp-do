@@ -6,6 +6,7 @@ import (
 	"learn1/services/cloudgcp"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -35,21 +36,21 @@ var instanceGCPCmd = &cobra.Command{
 			Ctx:      context.Background(),
 		}
 
-		if action == "start" || action == "START" {
+		if strings.ToLower(action) == "start" {
 
 			err := gc.Start()
 			if err != nil {
 				log.Fatalf(err.Error())
 			}
 
-		} else if action == "stop" || action == "STOP" {
+		} else if strings.ToLower(action) == "stop" {
 
 			err := gc.Stop()
 			if err != nil {
 				log.Fatalf(err.Error())
 			}
 
-		} else if action == "list" || action == "LIST" {
+		} else if strings.ToLower(action) == "list" {
 			err := gc.List()
 			if err != nil {
 				log.Fatalf(err.Error())
