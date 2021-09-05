@@ -50,7 +50,6 @@ var instanceAWSCmd = &cobra.Command{
 
 		} else {
 			fmt.Println("failed command please read docs")
-
 		}
 
 	},

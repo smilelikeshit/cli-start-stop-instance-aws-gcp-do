@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"learn1/services/cloudgcp"
 	"log"
+	"os"
 	"strings"
 
 	"github.com/spf13/cobra"
@@ -31,7 +32,7 @@ var instanceGCPCmd = &cobra.Command{
 		gc := &cloudgcp.Gcs{
 			Instance: args,
 			Zone:     zone,
-			Project:  "<PLEASE_PUT_PROJECT_ID_HERE>",
+			Project:  os.Getenv("GOOGLE_APPLICATION_CREDENTIALS"),
 			Ctx:      context.Background(),
 		}
 
